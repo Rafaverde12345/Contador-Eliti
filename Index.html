@@ -9,10 +9,19 @@
         }
         body {
             min-height: 100vh;
+            display: grid;
+            place-items: center;
         }
         section {
-            border: 2px solid black;
-            padding: 10px;
+            background: #f5f5f5;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        p {
+            font-size: 60px;
+            margin: 20px 0;
         }
     </style>
 </head>
@@ -20,8 +29,22 @@
     <section>    
         <h1>Contador</h1>
         <p>0</p>
-        <button>Incrementar</button>
-        <button>Disminuir</button>
+        <button onclick="mais()">Incrementar</button>
+        <button onclick="menos()">Disminuir</button>
     </section>
+    <script>
+        let contador = 0;
+        const p = document.querySelector('p');
+
+        function mais() {
+            contador++;
+            p.textContent = contador;
+        }
+
+        function menos() {
+            contador--;
+            p.textContent = contador;
+        }
+    </script>
 </body> 
 </html>
