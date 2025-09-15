@@ -29,22 +29,24 @@
     <section>    
         <h1>Contador</h1>
         <p>0</p>
-        <button onclick="mais()">Incrementar</button>
-        <button onclick="menos()">Disminuir</button>
+        <button id="inc">Incrementar</button>
+        <button id="dec">Disminuir</button>
     </section>
     <script>
         let contador = 0;
         const p = document.querySelector('p');
+        const incBtn = document.getElementById('inc');
+        const decBtn = document.getElementById('dec');
 
-        function mais() {
+        incBtn.addEventListener('click', function() {
             contador++;
             p.textContent = contador;
-        }
+        });
 
-        function menos() {
+        decBtn.addEventListener('click', function() {
             contador--;
             p.textContent = contador;
-        }
+        });
     </script>
 </body> 
 </html>
